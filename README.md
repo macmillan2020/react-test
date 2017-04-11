@@ -1,5 +1,6 @@
-# Getting Started
+# React Exercise 
 
-1. `git clone` this repo
-2. `npm install`
-3. enjoy!
+
+small "To do" project using React
+
+
