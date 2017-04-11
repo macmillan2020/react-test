@@ -8,9 +8,15 @@ class App extends React.Component {
 			todos: [],
 			todo: "Add task here!"
 		}
+		this.clearField = this.clearField.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.addTodo = this.addTodo.bind(this);
 		this.removeTodo = this.removeTodo.bind(this);
+	}
+	clearField(){
+		this.setState({
+			todo: ""
+		})
 	}
 	handleChange(e) {
 		this.setState({
@@ -46,8 +52,8 @@ class App extends React.Component {
 					<h1>To Do List</h1>
 				</header>
 				<form onSubmit={this.addTodo}>
-					<input type="text" name="todo" value={this.state.todo} onChange={this.handleChange}/>
-					<button>Add Task</button>
+					<input type="text" name="todo" value={this.state.todo} onClick={this.clearField} onChange={this.handleChange}/>
+					<button className="add-item-btn">Add Task</button>
 				</form>
 				<ul>
 					{this.state.todos.map((todo,i) => {
@@ -62,7 +68,7 @@ class App extends React.Component {
 class TodoItem  extends React.Component {
 	render(){
 		return (
-			<li>{this.props.data} <button onClick={() => this.props.remove(this.props.todoIndex)}>❌</button></li>
+			<li>{this.props.data} <button className="rm-item-btn" onClick={() => this.props.remove(this.props.todoIndex)}> X </button></li>
 			);
 	}
 }

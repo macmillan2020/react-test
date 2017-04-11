@@ -1,0 +1,23 @@
+body {
+  background: #235789; }
+
+header, form {
+  text-align: center; }
+
+button {
+  background: #FE4A49;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  margin-left: 20px;
+  border-radius: 2px; }
+
+form {
+  margin-bottom: 40px; }
+
+header, form, .app-container {
+  margin-top: 40px; }
+
+.app-container {
+  background: #FDFFFC;
+  border-radius: 5px; }
