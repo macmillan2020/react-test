@@ -11,6 +11,8 @@ button {
 	border: none;
 	margin-left: 20px;
 	border-radius: 2px;
+	padding-left: 16px;
+	padding-right: 16px;
 }
 
 form {
@@ -24,4 +26,5 @@ header, form, .app-container {
 .app-container {
 	background: #FDFFFC;
 	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
 }
