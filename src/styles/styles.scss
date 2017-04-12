@@ -1,5 +1,13 @@
+html{
+	font-size: 62.5%;
+}
 body {
 	background: #235789;
+	color: #161925;
+	font-size: 3rem;
+}
+h1 {
+	font-size: 4.5rem;
 }
 header, form {
 	text-align: center;
@@ -13,10 +21,22 @@ button {
 	border-radius: 2px;
 	padding-left: 16px;
 	padding-right: 16px;
+	&:hover {
+		background: #DB5461;
+		box-shadow: 0 2px 5px rgba(0,0,0,.26);
+	}
+	&:focus {
+		background: #DB5461;
+		box-shadow: 0 2px 5px rgba(0,0,0,.26);
+	}
 }
 
 form {
 	margin-bottom: 40px;
+}
+
+li {
+	margin-top: 15px;
 }
 
 header, form, .app-container {

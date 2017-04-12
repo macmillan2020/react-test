@@ -6,7 +6,7 @@ class App extends React.Component {
 		super();
 		this.state = {
 			todos: [],
-			todo: "Add task here!"
+			todo: 'Add task here!'
 		}
 		this.clearField = this.clearField.bind(this);
 		this.handleChange = this.handleChange.bind(this);
@@ -14,9 +14,11 @@ class App extends React.Component {
 		this.removeTodo = this.removeTodo.bind(this);
 	}
 	clearField(){
-		this.setState({
-			todo: ""
-		})
+		if (this.state.todo === 'Add task here!') {
+			this.setState({
+				todo: ''
+			})
+		}
 	}
 	handleChange(e) {
 		this.setState({
@@ -26,14 +28,14 @@ class App extends React.Component {
 	addTodo(e){
 		e.preventDefault();
 		const todoState = Array.from(this.state.todos);
-		if (this.state.todo === "") {
-			alert("Please enter a task 📝")
+		if (this.state.todo === '' || this.state.todo === 'Add task here!') {
+			alert('Please enter a task 📝')
 		} else {
 			todoState.push(this.state.todo);
 			console.log(this.state.todo);
 			this.setState({
 				todos : todoState,
-				todo : ""
+				todo : ''
 			});
 		}
 	}
@@ -52,8 +54,8 @@ class App extends React.Component {
 					<h1>To Do List</h1>
 				</header>
 				<form onSubmit={this.addTodo}>
-					<input type="text" name="todo" value={this.state.todo} onClick={this.clearField} onChange={this.handleChange}/>
-					<button className="add-item-btn">Add Task</button>
+					<input type='text' name='todo' value={this.state.todo} onClick={this.clearField} onChange={this.handleChange}/>
+					<button className='add-item-btn'>Add Task</button>
 				</form>
 				<ul>
 					{this.state.todos.map((todo,i) => {
@@ -68,7 +70,7 @@ class App extends React.Component {
 class TodoItem  extends React.Component {
 	render(){
 		return (
-			<li>{this.props.data} <button className="rm-item-btn" onClick={() => this.props.remove(this.props.todoIndex)}> X </button></li>
+			<li>{this.props.data} <button className='rm-item-btn' onClick={() => this.props.remove(this.props.todoIndex)}> X </button></li>
 			);
 	}
 }
